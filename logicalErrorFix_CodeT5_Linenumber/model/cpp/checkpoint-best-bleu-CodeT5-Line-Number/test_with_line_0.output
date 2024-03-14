@@ -1,0 +1,861 @@
+0	17 return in[i][k] > in[j][k];
+1	13 return a[x][i] < a[y][i];
+2	10 for (int j = 1; j <= m; j += 2) s[j] = 155 - s[j];
+3	10 for (int j = 1; j <= m; j += 2) s[j] = 155 - s[j];
+4	35 if (d[i] <= 1e-9) {
+5	3 const long double EPS = 1e-7;
+6	45 LL p = 0, s = 0;
+7	17 R = fmod(R + 2 * pi, 2 * pi);
+8	12 long long pp[N], f[N], tp[N];
+9	34 for (int j = 0; j < n - 1; j++)
+10	6 if (cur % 25 == 0) ++ans;
+11	37 long long q = inv(n) * (n - i) % M * inv(k - 1) % M;
+12	48 for (auto x : g[a[t * i]]) m[x]++;
+13	11 void update(long long x, long long val) {
+14	47 if (1LL * i * p > M) break;
+15	38 dp[!(i % 2)][j + (k == m)][nxt[k][0]] =
+16	42 while (j && b[i]!= b[j + 1]) j = kmp[j];
+17	19 for (int j = 2; j <= n; ++j) {
+18	36 cost = a[k] == b[j]? 0 : 1;
+19	3 int D[501][501][501], PI[500], RPI[501][2];
+20	3 int D[501][501][501], PI[500], RPI[501][2];
+21	4 int n, q, dfn[N], rr[N], cnt, f[N][21], d[N], a[N];
+22	37 ds[i][j].down = j;
+23	12 while (nx!= m) {
+24	18 while (r <= n) {
+25	23 if (ax == ay && bx == by) {
+26	39 ksm(k, 1ll * n * m - 2ll * c.first * c.second +
+27	39 ksm(k, 1ll * n * m - 2ll * c.first * c.second +
+28	16 printf("%lld\n", Fast(k, n * m));
+29	15 long long n, m, k, r, c, ax, ay, bx, by;
+30	31 if (dr < r && dc < c) aria += (r - dr) * (c - dc);
+31	31 if (dr < r && dc < c) aria += (r - dr) * (c - dc);
+32	20 while (i <= n && ta[i].first <= 0) ++i;
+33	46 int l = 0, r = lim + 1;
+34	53 sort(nodes[i].begin(), nodes[i].end());
+35	69 for (int i = 1; i <= n; i++) {
+36	3 const int N = 3e5 + 5;
+37	26 for (long long j = 0; j <= m; j++) c[i][j] = 1000000000;
+38	12 return 1LL * (b.first - a.first) * (c.second - b.second) >
+39	25 cout << ((n % 2 == 0 and a[0] + a[2] >= a[1])? "Yes\n" : "No\n");
+40	14 if (b >= (a + c))
+41	21 cout << "NO\n";
+42	24 printf("%s\n", ((cntA + cntC <= cntB)? "Yes" : "No"));
+43	19 if (b >= (a + c) && b >= a && b >= c) {
+44	21 printf("NO\n");
+45	17 if (da + dc >= db)
+46	27 if (b == a + c) {
+47	28 if (cubeta['A'] <= cubeta['B'] &&
+48	13 if (abs(b - c) <= a)
+49	13 if (abs(b - c) <= a)
+50	14 if (a >= b && b - a == c) return 1;
+51	95 if (chmin(a, b) && chmax(a, b)) {
+52	14 if (cnt + cnt > n)
+53	19 cout << "Yes";
+54	19 if (d >= b) {
+55	15 if (countb >= counta + countc)
+56	16 if (a[j] <= a[j]) {
+57	21 for (long long j = mi - 1; j >= i; j--) a[j + 1] = a[j];
+58	23 while (i >= 0 and j >= 0 and v[i][j]!= '.' and ls < k) {
+59	47 return ct > k? ct : 0;
+60	39 for (long long int j = 0; j <= m - 1; j++) {
+61	42 for (int j = 0; j < m; j++) {
+62	7 if (((y - x) & 1) || (y - x) / 2 < k || row + (y - x) / 2 >= m)
+63	17 if (aa[i].first > 1) sp.insert(aa[i]);
+64	34 while (sum - 2 > mx && v[i].first > 0) {
+65	44 printf("%d %d\n", rr.first, rr.second);
+66	34 while (sum - 2 > mx && v[i].first > 0) {
+67	26 long long res = 0;
+68	36 void update(int x, long long v) {
+69	37 if (!ql || ql >= qr) return 0;
+70	35 long long y = get(n) - get(p);
+71	26 scanf("%d", &a[i]);
+72	40 for (long long i = 1; i <= n; ++i) {
+73	37 a[i] = upper_bound(rv.begin(), rv.end(), a[i]) - rv.begin();
+74	39 ans += min(i - pre, pre - cnt1[j]);
+75	38 long long ans = 0;
+76	45 if (gl > r or gr < l) {
+77	34 for (int j = 0; j < cnt2 - 1; j++) {
+78	39 if (x[b]) {
+79	45 long long int st = d - n;
+80	27 int best = 0;
+81	82 for (int i = 1; i <= n; i++) {
+82	26 int L = a[0], R = 3e3;
+83	26 } else if (arr[i] + j < 2000) {
+84	27 while (l <= r) {
+85	26 for (int i = 0; i <= 1000; i++) ans = min(ans, dp[n][i]);
+86	24 for (int i = 0; i <= mx; ++i) ans = min(ans, i + dp[i]);
+87	15 for (int j = 0; j <= 2000; ++j) f[i][j] = INF;
+88	42 ll x = r - 1 - (l + 1) - (d[r - 1] - d[l + 1]);
+89	18 for (int j = i + 5 - 1; j <= m; j++) {
+90	45 long long C(long long n, int k) {
+91	40 for (long long k = 1; k <= m - 4; k++) {
+92	21 while (!q.empty() && q.front().first <= z + B) q.pop_front();
+93	31 int dp[MN][MN][MN * MN];
+94	12 if (m > n) return k == 0? fac[m] : 0;
+95	19 (p2 = (p1 = rbuf) + fread(rbuf, 1, 1 << 23, stdin), p1 == p2)
+96	21 g = (g + 1ll * h * C[i - 1][a]) % P;
+97	41 if (mod == 1 || m + k > n) {
+98	15 if (count > len || (len > 1 && count > len / 2)) {
+99	57 if (len == 1) return cur = (ma == 1? (cnt == 1) : (cnt == 0));
+100	25 rj <= min(r, k - ((d - 1) == m) - lj); rj++)
+101	26 id[i].push_back(n + 1);
+102	37 for (int i = max(0, s % b - x[k]); i < s % b; i++) cnt[b][i] += tag;
+103	3 const int N = 3e5 + 5, B = 400;
+104	31 for (int i = x[u] + 1; i <= x[u] + y[u]; ++i)
+105	26 for (int i = T + a[x]; i < T + r; i++) sum[r][i % r]--;
+106	26 for (int i = T + a[x]; i < T + r; i++) sum[r][i % r]--;
+107	44 if (i + a[x].y <= n) dif[i + a[x].y]--;
+108	34 printf("%I64d\n", dp[1][m]);
+109	42 if (a[i] <= a[pos]) pos = i;
+110	5 long long st[N], c[N][2], f[N], siz[N], a[N];
+111	15 if (a[i] <= a[mn]) mn = i;
+112	23 for (int i = 0; i <= siz[w] + siz[v.second]; i++) g[i] = 0;
+113	22 (M - 1) * a[m] - 2 * (i + j) * a[m]);
+114	8 if (x - 1 >= l) ls[x] = build(l, x - 1);
+115	22 while (top && a[stk[top]] >= a[i]) {
+116	5 long long st[N], c[N][2], f[N], siz[N], a[N];
+117	9 long long j = 2 * (i + 1);
+118	37 for (long long i = 1; i <= 2e6; i++) f[i] = f[i - 1] * i % P;
+119	36 long long p_read = 1, data_read = 1;
+120	12 cout << "1" << endl;
+121	19 for (i = 2; i <= n; i++) {
+122	21 if (d <= k - 1)
+123	18 if (m >= n * (n - 1) / 2) {
+124	18 if (k >= 2)
+125	26 if (m >= (n - 1) && (n > 100000 || m < a[n - 1]))
+126	19 if (m >= n * (n - 1) / 2) {
+127	15 if (n >= 1) {
+128	11 else if (k >= 3 && m >= n * (n - 1) / 2)
+129	19 if (m == 1) {
+130	16 if (m == 1)
+131	6 if ((m + o) % 2 == 1) {
+132	15 if (a == 1 && b == 1 && c == 0) diff = 1;
+133	45 if (n!= 0) {
+134	17 while (l < r) {
+135	43 if (a >= k / 2) {
+136	37 if (ans >= n)
+137	12 int l = 0, r = n, key = 0;
+138	35 if (ans <= mn) {
+139	32 if (L > R) {
+140	60 if (n & 1) {
+141	36 cout << -arr[1] << " " << arr[1] + arr[2] << " " << -arr[1] << " ";
+142	27 cout << -a[n - 1] << " " << -a[n - 1] << " " << -a[n - 2] << '\n';
+143	25 cout << -1 << " " << 1 << " " << 1 << endl;
+144	26 cout << a[2] <<'' << -(a[1] + a[3]) <<'' << a[3] <<'';
+145	26 cout << a[2] <<'' << -(a[1] + a[3]) <<'' << a[2] <<'';
+146	36 if (j && i + j - 1 < n &&
+147	44 cout << "No\n" << 0;
+148	37 while (dep[u] >= dep[v]) {
+149	68 cout << que.size() << "\n";
+150	22 while (gg <= k) gg = gg * k, ++ans;
+151	22 while (gg <= n) gg = gg * k, ++ans;
+152	26 for (auto &b : sts[y]) {
+153	3 int n, k, m, cnt, now, A[1000 + 5][1000 + 5], La;
+154	11 while (res <= n) {
+155	31 ll x = i, y = j, z = 1;
+156	31 for (int j = i + 1; j <= n - 1; ++j) {
+157	17 sort(f + 1, f + q + 1, [&](int x, int y) { return a[x] > a[y]; });
+158	46 if (i == t - 1 || a[s[i]].second < a[suf[i + 1]].second)
+159	13 bool cmp1(int x, int y) { return v1[x] > v1[y]; }
+160	37 for (int i = 0; i <= n; i++) {
+161	36 for (int i = n + 1; i <= n + n; i++) a[i][i] = n + n - i + 1;
+162	39 if (i > 0 && i < n - 1 && j > 0 && j < n - 1) {
+163	18 int t = min(y - 1, n - x + 1);
+164	20 else if (a[k] == 0 && a[k - 1] == 0)
+165	10 long long sum = 1;
+166	29 for (int i = 2; i < n; i++) {
+167	17 if (a[1] == 1) now--;
+168	17 long long ans = 1;
+169	21 } else if (a[i] >= num) {
+170	22 if (maxbr < a[i]) br++;
+171	19 for (int i = n - 1; i >= 0; i--) {
+172	19 for (int i = n - 1; i >= 0; i--) {
+173	33 b.push_back(a[1]);
+174	6 long long arr[n];
+175	16 vector<long long int> v, r;
+176	47 for (long long x : v) ans += (2 * x);
+177	25 if (have == 0) {
+178	27 ans += n2 - i;
+179	38 if (tot > 1 || ans % 2 == 0) p = 0;
+180	32 if (i.second > 2) {
+181	4 long long q, n, a[NMX], A[NMX], kq;
+182	45 cout << (a == v? "Yes\n" : "No\n");
+183	62 long long ans = 0;
+184	18 dp[i][j] |= (minv[a[i] ^ j] <= a[i]);
+185	71 if (a[i].b == 0) ok = 0;
+186	17 for (int i = 0; i <= 512; i++) cp[i] = 1e9;
+187	18 bp[k][j ^ ap[i]] = 1;
+188	5 if (o >= 2 && (o & o - 1) == 0)
+189	22 dp[j ^ i] = min(dp[j ^ i], *it);
+190	30 r[to] = min(r[to], y);
+191	31 for (int j = a[i] + 1; j <= rec[u]; j++) v[j].push_back(u);
+192	15 fill(vis, vis + N, 0);
+193	50 for (int j = 0; j < (int)pr.size() && pr[j] <= mindiv[i] && i * pr[j] <= N;
+194	60 for (long long i = 1; i <= top; i++) {
+195	7 vector<long long> stk[1000006];
+196	25 long long mn[N], a[N], nxt[N];
+197	34 if (i >= 1000) continue;
+198	19 long long sum = 0;
+199	23 if (v[i] % n!= 0) {
+200	53 if (!isPrime[sum - a[i]]) {
+201	33 if (!isComposite(sum - v[i])) {
+202	11 (x!= 5 &&!(x % 5)))
+203	11 (x!= 5 &&!(x % 3)))))
+204	37 if (x < 0) x = -x, putchar(45);
+205	18 for (int j = 1; j <= m; j++) {
+206	16 for (int i = 1; i <= 100010; i++) {
+207	17 for (i = 1; i <= m; i++) {
+208	17 if (k >= v.size()) {
+209	18 for (int j = 1; j <= n; j++)
+210	23 for (int i = 1; i <= m; i++) {
+211	52 tmp = max(dp[i][j - 1], dp[i][j]);
+212	12 for (int j = 1; j <= n; j++) {
+213	35 for (int i = n - 1; i >= 0; i--) {
+214	25 for (int j = i + 1; j <= n; ++j) cout << cnt << " ";
+215	30 for (int i = 1; i < n; i++) {
+216	24 if (res.back() == 0) res.back() = n;
+217	26 a[n - 1] = n - 1;
+218	29 cout << idx << " ";
+219	16 a[n - 1] = n - x + 1;
+220	31 int k = print(5 - i + 1, x);
+221	18 for (int i = n; i >= 1; --i) {
+222	76 if (h[x] > h[y]) {
+223	39 d[j] = d[j] + 1;
+224	47 k += (deg[i] & 1);
+225	61 for (int i = 1; i <= q; i++) {
+226	44 cout << "No\n" << 0;
+227	37 while (dep[u] >= dep[v]) {
+228	68 cout << que.size() << "\n";
+229	22 while (gg <= k) gg = gg * k, ++ans;
+230	22 while (gg <= n) gg = gg * k, ++ans;
+231	26 for (auto &b : sts[y]) {
+232	3 int n, k, m, cnt, now, A[1000 + 5][1000 + 5], La;
+233	11 while (res <= n) {
+234	31 ll x = i, y = j, z = 1;
+235	17 sort(f + 1, f + q + 1, [&](int x, int y) { return a[x] > a[y]; });
+236	46 if (i == t - 1 || a[s[i]].second < a[suf[i + 1]].second)
+237	13 bool cmp1(int x, int y) { return v1[x] > v1[y]; }
+238	37 for (int i = 0; i <= n; i++) {
+239	36 for (int i = n + 1; i <= n + n; i++) a[i][i] = n + n - i + 1;
+240	39 if (i > 0 && i < n - 1 && j > 0 && j < n - 1) {
+241	18 int t = min(y - 1, n - x + 1);
+242	20 else if (a[k] == 0 && a[k - 1] == 0)
+243	10 long long sum = 1;
+244	17 if (a[1] == 1) now--;
+245	17 long long ans = 1;
+246	21 } else if (a[i] >= num) {
+247	22 if (maxbr < a[i]) br++;
+248	19 for (int i = n - 1; i >= 0; i--) {
+249	19 for (int i = n - 1; i >= 0; i--) {
+250	33 b.push_back(a[1]);
+251	6 long long arr[n];
+252	16 vector<long long int> v, r;
+253	47 for (long long x : v) ans += (2 * x);
+254	27 ans += n2 - i;
+255	38 if (tot > 1 || ans % 2 == 0) p = 0;
+256	32 if (i.second > 2) {
+257	4 long long q, n, a[NMX], A[NMX], kq;
+258	45 cout << (a == v? "Yes\n" : "No\n");
+259	62 long long ans = 0;
+260	35 add -= (cnt2[i] - 1) * cnt2[i] * (n - cnt2[i]) / 6;
+261	22 ans = 1ll * n * (n - 1) * (n - 2) / 6;
+262	18 i64 count = n * (n - 1) * (n - 2) / 6;
+263	18 i64 count = n * (n - 1) * (n - 2) / 6;
+264	20 ll elem = 0;
+265	24 ans -= (x[a] - 1) * (y[b] - 1);
+266	30 auto upd = [&](int r, int c, long long delta) {
+267	28 if (((j & 1)!= 0) && mmp[xt + 1][yt] == 0 && xt + 1 <= n)
+268	59 vizitat[lin][col] = false;
+269	6 if (t == 0) dx = -dx, y = dy;
+270	8 while (in(x + dx, 1, n) && in(y + dy, 1, m)) {
+271	19 for (long long i = 1; i <= n; i++) {
+272	24 st[0][i] = st[m + 1][i] = 1;
+273	35 for (int i = 0; i <= min(n - x, m - y); i++) {
+274	20 int dp[(1 << 20) + 10][2], g[(1 << 20) + 10];
+275	24 if (b == mini) nocc[i][b + mx]++;
+276	30 for (long long j = 400000; j >= 0; j--) {
+277	22 (b[i] ^ 1) ^ (n & 1) ^ (s[i] == 'R')? 'R' : 'L');
+278	37 cout << a[r] <<'' << dir[r] << '\n';
+279	11 if (s[d - 1] == s[r]) {
+280	22 if (now == 1 || str[now] == str[now - 2]) {
+281	22 if (d + q.k - 1 > ans.size()) {
+282	35 int l = -1, r = n - 1;
+283	5 int dfs[2 * maxn][2], freq[maxn], psum[2 * maxn];
+284	23 for (int i = k; i <= n; i += i & (-i)) ta[i] += p;
+285	40 int tv = n + 1, fv = l + 1;
+286	20 while (!s.empty() && a[s.top()] > a[i]) {
+287	26 for (; top && a[stk[top]] > a[i]; top--) nxt[stk[top]] = i;
+288	37 if (l + 1 <= r) {
+289	9 cout << num - n + 1 << " " << n << "\n";
+290	10 printf("1\n");
+291	26 if (k & (1ll << i)) {
+292	18 if ((1ll << i) <= k) {
+293	45 ans.push_back(n / 2);
+294	35 for (long long i = x; i <= ss; i++) {
+295	22 for (int j = i; j < n; j += i)
+296	44 for (int i = n / 2; i < n; i++) {
+297	42 for (int i = 2; i <= n; i++) {
+298	46 while (j * cnt <= n) {
+299	33 if ((dis[x] ^ dis[y])!= val) {
+300	69 for (int i = 1; i <= M; i++) {
+301	7 long long n, m, type[N], cmp[N], cmp_p = 0;
+302	86 cout << ans % 1000000007 << endl;
+303	26 cout << 0 << '\n';
+304	52 writeln(6 * quickpower(4, (1ll << k) - 2) % mod);
+305	20 if (n == 0) return cout << 6 << '\n', 0;
+306	17 nodes = pwr(2, k);
+307	55 v[2LL * x] = cx % M;
+308	25 could1[i][j][k] |= could[i][j] & could[i][k];
+309	74 if (a1[i] >= a2[j]) {
+310	45 if (!mp.count(1)) mp[1] = -1;
+311	48 if (!q.empty() && q.top() >= id / 2 * 2) {
+312	3 const long long MOD = (long long)1e9 + 7;
+313	30 if (color.find(node)!= color.end() && bad_edge.count({last, color[node]}))
+314	12 if (n + 1 >= mn + num)
+315	25 if (u <= v)
+316	27 long long q = s / k;
+317	34 if (c >= n)
+318	16 if (s >= mn and s <= mx)
+319	15 if (s - 1 >= p) {
+320	30 if (p!= 0) w -= g(p);
+321	12 for (i = 2; i < str1.length() - 2; i++) {
+322	13 cout << "NO";
+323	12 cout << "NO" << endl;
+324	12 cout << "NO" << endl;
+325	10 for (int i = 0; i < n; i++)
+326	37 return (a.second > b.second);
+327	40 long long dp[n][5];
+328	37 if (u1 + c > n / 2) {
+329	25 if (cnt + cnt1 + cnt2 >= n) {
+330	55 long long ans = 0;
+331	16 map<long long, long long> m;
+332	23 cout << ((n) * (n - 1)) / 2 << '\n';
+333	27 long long sol = 0;
+334	37 ll ps = (s * 2) / n;
+335	23 map<long long, int> mp;
+336	59 for (int i = 0; i < n; i++) {
+337	35 add -= (cnt2[i] - 1) * cnt2[i] * (n - cnt2[i]) / 6;
+338	18 i64 count = n * (n - 1) * (n - 2) / 6;
+339	18 i64 count = n * (n - 1) * (n - 2) / 6;
+340	20 ll elem = 0;
+341	24 ans -= (x[a] - 1) * (y[b] - 1);
+342	30 auto upd = [&](int r, int c, long long delta) {
+343	28 if (((j & 1)!= 0) && mmp[xt + 1][yt] == 0 && xt + 1 <= n)
+344	59 vizitat[lin][col] = false;
+345	6 if (t == 0) dx = -dx, y = dy;
+346	8 while (in(x + dx, 1, n) && in(y + dy, 1, m)) {
+347	19 for (long long i = 1; i <= n; i++) {
+348	24 st[0][i] = st[m + 1][i] = 1;
+349	35 for (int i = 0; i <= min(n - x, m - y); i++) {
+350	20 int dp[(1 << 20) + 10][2], g[(1 << 20) + 10];
+351	24 if (b == mini) nocc[i][b + mx]++;
+352	30 for (long long j = 400000; j >= 0; j--) {
+353	22 (b[i] ^ 1) ^ (n & 1) ^ (s[i] == 'R')? 'R' : 'L');
+354	37 cout << a[r] <<'' << dir[r] << '\n';
+355	11 if (s[d - 1] == s[r]) {
+356	22 if (now == 1 || str[now] == str[now - 2]) {
+357	33 int q[maxn * 20], head = 0, tail = 1;
+358	26 if (it == S.end() || *it >= x) continue;
+359	24 if (j > e || (i <= m && S[i] < S[j]))
+360	7 return max(x, y) > max(a.x, a.y);
+361	18 while (l <= r - 1) {
+362	3 long double eps = 1e-8;
+363	3 long double eps = 1e-8;
+364	48 long long l = 0, r = n, ans = -1;
+365	3 long double eps = 1e-8, X = 1.0;
+366	3 const long double eps = 1e-12;
+367	100 for (int i = 1; i <= n; i++) {
+368	21 for (int i = 2; i <= n; ++i) {
+369	30 if (p < 1e-7) return 0;
+370	25 double choose[1024][1024];
+371	29 for (int a = 1; a <= n; ++a) {
+372	38 c[len - 1] * d % mo * d % mo;
+373	26 vector<long long> a(2 * n);
+374	28 ans = dis(1, 2) + dis(2, 3) + dis(3, 0);
+375	26 mid = (MAX - d1 + d2 + 1) / 2;
+376	26 mid = (MAX - d1 + d2 + 1) / 2;
+377	12 int L = 1, R = 1e9, ans = 0;
+378	31 long long sx = N - (q - fy + 1), ss = fy;
+379	20 if (x < 0 || x >= edge) return 2 * edge + 5;
+380	17 while (l <= r - 1) {
+381	19 ql = 1, qr = N - (R - L + 1);
+382	47 for (int j = 0; j < 2; ++j)
+383	46 int sum = (t[1] + t[2] + t[3]) / 2, ert = sum - t[1];
+384	12 for (auto x : a) printf("%d ", x);
+385	47 for (int j = 0; j < 2; ++j)
+386	13 if (arr[l] >= arr[l + 1]) break;
+387	19 if (v[i] <= v2.back()) {
+388	14 if (v[left] <= last && v[n - 1 - right] >= last) {
+389	10 long long prev = -1;
+390	80 for (int i = 1; i <= n; i++) {
+391	49 ans = B[b];
+392	36 for (long long i = (1); i <= (n); i++) {
+393	19 else if ((j - r + 1) & 1)
+394	12 if (A[i] >= A[i - 1])
+395	30 if (u < n && v < n) g[u][v] = g[v][u] = 1;
+396	31 for (int i = (1), __i = (6); i <= __i; ++i)
+397	25 int v = __builtin_ctzll(e);
+398	45 if (u <= 48 && v <= 48 && u!= v) {
+399	31 for (int i = (1), __i = (6); i <= __i; ++i)
+400	31 for (int i = (1), __i = (6); i <= __i; ++i)
+401	18 if (s[a] > s[b]) swap(a, b);
+402	12 if ((xx >> i) & 1 == 1) continue;
+403	46 for (int i = 0; i < m; i++) {
+404	22 if (a + 1 < n &&!vis[a + 1][b] &&!s[a + 1][b][0]) {
+405	46 if (a == 0 || a % 2 == 1)
+406	17 return!dir1[3] &&!dir2[1];
+407	19 for (int i = 1; i <= 31; i++) k = gcd(k, bit[i]);
+408	59 for (int x = 0; x < P; x++) {
+409	53 if (i * i!= res) {
+410	14 for (int i = 0; i <= 30; i++)
+411	74 for (int i = 1; i <= n; i++) {
+412	17 if ((1 << i) & a[j]) ++cnt[j];
+413	15 cnt[j] += (x & (1 << i));
+414	28 for (long long i = 31; i; i++) {
+415	25 if (ans % i == 0) printf("%d ", i);
+416	25 for (long long int i = 1; i <= sqrt(k); i++) {
+417	74 for (int i = 1; i <= n; i++) {
+418	33 int q[maxn * 20], head = 0, tail = 1;
+419	26 if (it == S.end() || *it >= x) continue;
+420	24 if (j > e || (i <= m && S[i] < S[j]))
+421	7 return max(x, y) > max(a.x, a.y);
+422	65 cin >> s >> s1 >> s1;
+423	19 printf("%d\n", time);
+424	15 long long ans = 0;
+425	11 for (k = 0; k < d.length(); k++) {
+426	33 long long ans = 0;
+427	17 long long ans = 0;
+428	9 long long ans = 0, pos1 = 0, pos2 = 0;
+429	16 if (i > 0) res += abs(j - v[i - 1]);
+430	15 long long result = 0;
+431	27 while (o && v[o] > a[j]) o--;
+432	26 if (n <= far[0][i]) far[0][i] = n + 1;
+433	37 after_path = min(after_path, minv[i][pos]);
+434	32 while (h <= t && a[q[t]] > a[i]) t--;
+435	6 long long mm[N], st[LOGN][N];
+436	26 for (; hd <= tl && q[hd] <= i - m; ++hd)
+437	16 while (l <= r && stk[l] > i + k) l++;
+438	11 long long get_min(int l, int r) {
+439	31 for (len = 1; top && stk[top].val >= v;) len += stk[top--].len;
+440	31 for (len = 1; top && stk[top].val >= v;) len += stk[top--].len;
+441	34 int mid = ql + qr >> 1, pos = l;
+442	3 const int MAXN = 100010, MAXM = 1000010;
+443	15 tot += cal[i] * (last - i + 1);
+444	45 long long ans = 0, pw2 = ksm(2, k), pw3 = 1;
+445	12 int maxi = 0;
+446	16 if (n % 2 == 1) ans = 0;
+447	11 if (i > 1 && p[i - 1] >= p[i]) fl = 1;
+448	13 if (n % 2 == 0) {
+449	27 if (v[i] >= v[i + 1]) {
+450	37 if ((n & 1) == 0) {
+451	17 cout << "NO";
+452	12 if (n % 2 == 1 &&!flag)
+453	17 for (int i = 0; i <= n - 1; i++) {
+454	18 ans |= nums[i] < nums[i + 1];
+455	28 for (int i = 1; i <= n; i++) {
+456	12 for (int j = 1; j <= n; j++) {
+457	12 if (temp > val) ok = false;
+458	13 if (ar[i] < ar[i + 1]) flag++;
+459	13 if (n % 2!= 0) {
+460	48 if (vec[i] >= vec[i + 1]) {
+461	15 if (!good and N % 2)
+462	18 if (vec[i] > vec[i - 1]) {
+463	40 if (a[i] < a[i - 1]) {
+464	64 long long res = 1;
+465	22 cout << "YES";
+466	44 cout << "Yes" << endl;
+467	20 if (a[i] < a[i + 1]) {
+468	8 if (n % 2 == 1) return "YES";
+469	16 puts("NO");
+470	86 cout << ans % mod << endl;
+471	10 if (n % 2 == 1) {
+472	10 cout << "NO\n";
+473	25 if (a[j] % (i + 1)!= 0) {
+474	18 long long mod = (x % y) * x;
+475	10 if (x <= y) {
+476	26 long long fenkuai = (nana[i] + x - 1) / x;
+477	53 dp[pre][a[n]] = 1;
+478	37 for (int l = 0; l < p.size() - 1; l++) {
+479	19 long long absolute(long long a) {
+480	15 if (cnt >= k) {
+481	9 for (long long i = 0; i <= 64; i++) {
+482	23 while (pow(2, a) <= k) {
+483	39 long long rem = (k - sum1 + 1) * v[idx];
+484	31 if (temp <= k) {
+485	17 if (k <= ten[d] - 1) {
+486	33 if (k + 1 == ksm(10, a[i] - pos, 1e18)) f = true;
+487	25 if (k - temp <= 0) {
+488	37 (long long int)pow((long long int)10, v[i - 1]);
+489	31 if (sig[i] <= k) {
+490	34 if (k <= fastPower(10ll, a[i] - a[i - 1])) {
+491	19 if (k < 9) {
+492	14 for (int i = 0; i < m; i++) ord[i] = i;
+493	31 dnmx(n, vector<int>(m, 0)), dnmn(n, vector<int>(m, INF));
+494	38 dp[i][j] = dp[i][j] + ksm(i - 1, j) % mod;
+495	28 C[i][j] = (C[i - 1][j] + C[i - 1][j - 1]) % mod;
+496	28 C[i][j] = (C[i - 1][j] + C[i - 1][j - 1]) % mod;
+497	19 for (int j = 1; j <= n; j++)
+498	19 for (int j = 0; j <= 500; j++) mi[i][j] = qpow(i, j);
+499	45 if (n < 0 || k < 0 || n < k) return 1LL;
+500	45 for (long long i = n; i >= 1; --i) {
+501	65 cin >> s >> s1 >> s1;
+502	19 printf("%d\n", time);
+503	15 long long ans = 0;
+504	17 long long ans = 0;
+505	9 long long ans = 0, pos1 = 0, pos2 = 0;
+506	16 if (i > 0) res += abs(j - v[i - 1]);
+507	15 long long result = 0;
+508	15 cout << (x0 - 4 + n / 4 * 4) << endl;
+509	16 if (x % i == 0)
+510	41 } else if (n % 4 == 3) {
+511	46 cout << x + n << "\n";
+512	17 ans = x + (floor(n / 4.00)) * 4;
+513	23 if (_v[i] <= r.first && _cmpv(_v[i]) && _cmpi(i)) {
+514	35 cnt = x - y + 1;
+515	39 cout << x + n - 1 << '\n';
+516	37 ans = n;
+517	11 ans = (a == 1? x - n : a == 2? x + 1 : a == 3? x + 1 + n : a);
+518	15 long long n1, n2, n3, n4;
+519	16 cout << (x + 1) - y << endl;
+520	10 while (n2 <= n) {
+521	100 for (int i = 1; i <= n; i++) {
+522	19 ans = x + 1 - n;
+523	12 cout << n << "\n";
+524	19 mn = max(mn, a[1]);
+525	13 mn = max(mn, a[j + 1] - vic);
+526	21 if (a[i] + s < 0) {
+527	39 auto p = red.lower_bound({mx, -i});
+528	60 } else if (red[i].data >= n) {
+529	42 if (okx == 1 && (x[cntx] < mnx || x[cntx] > mxx)) break;
+530	26 maxny = min(maxny, m - dy);
+531	43 x = n + miny + 1, y = m - maxx;
+532	36 dist[p[h].first][p[h].second] += cnt - k;
+533	36 dist[p[h].first][p[h].second] += cnt - k;
+534	41 long long first = min(m, a[i].first);
+535	37 cout << l[i] << " " << m - l[i] << endl;
+536	74 for (int i = 1; i <= n; i++) {
+537	46 map<long long, vector<long long>> mp;
+538	39 mp[a[i] + b[i] - mp[i]].push_back(i);
+539	25 long long ll = max(long long)(0, mi[i] - a[i].second);
+540	25 int dist = 0, mn = -1, w = -1;
+541	35 int a[MAX_N], b[MAX_N], m[MAX_N], t[MAX_N];
+542	43 ans[id - 1] = m[id] - b[id];
+543	24 cout << n << " ";
+544	13 cout << i << " ";
+545	26 for (long long i = 1; i <= n; i++) {
+546	82 for (int i = 1; i <= n; i++) {
+547	8 cout << i + 1 << " ";
+548	7 for (int i = 1; i < n; i++) cout << i + 1 << " ";
+549	19 ll n;
+550	5 const long long INF = 1000000000001;
+551	10 vector<long long> a(n);
+552	8 cout << i + 1 << " ";
+553	15 if (abs(a - b) <= 1 && a + b + 2 <= n) {
+554	8 if (y + z > x - 1 || y - z > 1 || y - z < -1) {
+555	15 if (a + b <= n - 2 && abs(a - b) < 1) {
+556	30 for (long long i = 1; i <= b; i++) {
+557	18 else if ((n & 1) && a == maxv && b == maxv)
+558	39 long long int* arr = new int[n + 1]();
+559	18 cout << n - i + 1 << " " << i << " ";
+560	25 x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
+561	35 if (w[i].p.first <= x) {
+562	25 winners.insert(prev(ma.end())->second);
+563	3 const int max_n = 200111, inf = 1000111222, mod = 998244353;
+564	71 for (int i = 1; i <= n; i++) {
+565	17 long long b0 = 0, b1 = 0, w0 = 0, w1 = 0;
+566	18 int M = (L + R) / 2 + 1;
+567	36 if (ca && q1.size() == ca && q2.size() == ca &&
+568	49 cnt += (T[q].c == perm[2]);
+569	5 const long long N = 3e18;
+570	86 cout << "Yes" << endl;
+571	44 } else if (i == s2.size() - 1)
+572	55 for (int i = 0; i < cnt2; i++) {
+573	13 int temp1 = log10(x1 / x2) + p1 - p2;
+574	28 for (long long int i = 0; i < s2.size(); i++) {
+575	42 for (int i = x; i < s1.size(); i++) {
+576	17 while (i < n && req >= 0) {
+577	24 } else if (c > n / 2) {
+578	19 for (int i = 1; i < n / 2; i++) {
+579	12 for (int i = 1; i < c; i++) {
+580	9 for (long long int z = 0; z <= n / 2; z++) {
+581	19 for (int j = i + 1; j <= m && t < n / 2; j++) {
+582	16 while (cnt <= (n / 2)) {
+583	16 for (ll i = 2; i <= n + 2 >> 1; i++) cout << x[i] <<'' << x[i] << '\n';
+584	43 for (__typeof(0) i = (0), _end = (n), _step = 1 - 2 * ((0) > (n)); i!= _end;
+585	20 while (i <= n / 2) {
+586	9 vector<long long> v;
+587	16 int temp = n - 1;
+588	16 vector<long long> a(n);
+589	23 cout << a[i] << " " << a[i] << '\n';
+590	20 while (l <= r) {
+591	33 long long b = 0, e = 2e18, ans = -1;
+592	36 long long a = -1, b = 2e18, mid;
+593	40 add(dp[2][1], dp[2][1]);
+594	34 long long dp[maxn][2];
+595	25 if (dx >= 0 && dx < n && dy >= 0 && dy < m && mm[dx][dy]!= '#') {
+596	58 if (bad_deg[q.top()][bad_deg[q.top()][bad_deg[q.top()][bad_deg[q.top()][bad_deg[q.top()][bad_deg[q.top()][bad_deg[q.top()][bad_deg[q.top()][bad_deg[q.top()][bad_deg[q.top()][bad_deg[q.top
+597	37 val[i * m + j] = 0;
+598	34 for (int i = 0; i < m; i++) cout << G[i] << "\n";
+599	18 pa = a[j + k], pb = (long long)a[j + k + l] * *w % M,
+600	12 if (s % n == 1)
+601	14 cout << 1;
+602	19 if (sum & 1)
+603	15 cout << 1 << endl;
+604	95 for (int i = 1; i <= n; i++) {
+605	21 if (b[i] == '1') changehobe1++;
+606	7 if (str2[i] == '1')
+607	52 if (b >= k) {
+608	27 long long w = n - red - blue;
+609	33 maxim = max(maxim, 1ll * (k - i) * i);
+610	9 long long f[N][N * 2], g[N][N * 2];
+611	20 long long dp[2010][4010];
+612	19 for (int j = 0; j <= 2 * N + 5; j++) {
+613	33 if (!((b[j] == '?') || (b[j] == B))) continue;
+614	24 ll way[N][N * 2], sum[N][N * 2];
+615	37 if (s[i] == '?' && t[j] == '?') {
+616	39 int tj = (~i & 1? j + l - k : j - l + k);
+617	19 if (s.size() <= 3) {
+618	43 if (t!= "abc" ||!cha[0] ||!cha[1] ||!cha[2]) {
+619	82 for (int i = 1; i <= n; i++) {
+620	22 cout << n / 2 + 1 << " " << n / 2 - 1 << " "
+621	15 for (i = a; i >= 0; i--) {
+622	55 auto x = cup.upper_bound(i * 2);
+623	41 if (query(y, 3 * i + 1, 3 * i + 2)) {
+624	45 honest = one + 2, cheat = zero + 2;
+625	23 for (long long i = 1; i <= n - 4; i += 3) {
+626	46 (i + 1) == crew || (i + 2) == crew) {
+627	45 if (mx1 == -1) {
+628	8 for (i = 0; i < 8; i++) {
+629	11 long long c = v[6] - v[3];
+630	15 if ((a[7] - a[0]) - a[1] == a[3]) {
+631	14 if (b[2] == b[1] + b[0])
+632	10 long long int arr[100];
+633	12 cin >> arr[i];
+634	15 cout << a[1] << '\n';
+635	37 ans += "aabb";
+636	28 printf("%c\n", q[strlen(q) - 2]);
+637	28 printf("%c\n", q[strlen(q) - 1]);
+638	27 long long sum1 = 1, sum2 = 1;
+639	27 long long sum1 = 1, sum2 = 1;
+640	29 auto ok = [&](long long d) {
+641	15 long long int arr[2];
+642	16 sum += arr[i - w] * arr[i];
+643	86 cout << "YES" << endl;
+644	48 if ((sum) % (n * (n + 1) / 2) == 0)
+645	39 if (x % n || x / n <= 0)
+646	82 for (int i = 1; i <= n; i++) {
+647	11 i64 sum = accumulate(b.begin(), b.end(), 0ll);
+648	11 i64 sum = accumulate(b.begin(), b.end(), 0ll);
+649	11 i64 sum = accumulate(b.begin(), b.end(), 0ll);
+650	22 if (y <= 0 || (y % n!= 0)) {
+651	60 for (long long int i = 0; i < a.size(); i++) {
+652	13 if (cnt % ((n * n + n) / 2)!= 0) {
+653	19 if (x % n!= 0 || x < 0) {
+654	20 if (y <= 0 or y % n) {
+655	34 if (sum % tot || sum / tot > n) {
+656	66 for (long long int i = 1; i <= n; i++) {
+657	43 if (vy[i + j]!= vx[countY - j - 1]) found = false;
+658	45 if ((ll)pl.size() <= (ll)sy.size() &&!used[pl]) {
+659	40 seg[v[i].first - v[i - 1].first].push_back(i);
+660	52 sort(v.rbegin(), v.rend());
+661	4 long long n, m, k, fa[N], cnt[N];
+662	44 v.push_back(make_pair(b[i + 1].first - b[i].first, i));
+663	13 cout << "no" << endl;
+664	6 while (j <= len) {
+665	15 cout << "YES" << endl;
+666	16 printf("Yes");
+667	34 if (str[i]!= str[i + len - 1]) {
+668	24 cout << "NO" << endl;
+669	24 cout << "NO" << endl;
+670	18 cout << "YES" << endl;
+671	24 cout << "NO" << endl;
+672	24 cout << "NO" << endl;
+673	18 cout << "NO" << endl;
+674	12 while (n > 0 && k >= s.length() / 2) {
+675	35 for (long long i = 0; i <= x; i++) {
+676	23 if (num1.size() <= sum.size()) {
+677	53 for (long long int i = j; i < ss.size(); i++) {
+678	35 if (num >= 9 and num < 0) {
+679	47 } else if (a.back() < s.back()) {
+680	33 v.push_back(s[i] - '0');
+681	33 for (int j = 1; j < n; ++j) {
+682	28 while (l <= r) {
+683	45 if (sel.count(j)) extra = 1;
+684	26 for (size_t i = j + 1; i < m; ++i) {
+685	104 cout << "Impossible" << endl;
+686	104 cout << "Impossible" << endl;
+687	19 while (mm[i] == 1) {
+688	39 printf("%lld ", ans[i]);
+689	16 vector<long long> ans(n + 1, -1);
+690	26 pos2 = (pos2 + b * d) % n;
+691	42 for (long long j = A; j <= n; j += sb) {
+692	32 long long g1 = n / m, g2 = n / m + 1;
+693	16 for (int i = 1; i <= n; i++) {
+694	22 for (int j = 0; j < n - (n % m) * (n / m + 1); j++) {
+695	24 for (int j = 0; j <= flr - md; j++) {
+696	14 w[fy] = max(w[fy], w[fx]);
+697	60 for (int i = 0; i < K; i++) {
+698	13 if (++i!= mx[x].end() &&!used[{x, *i}] && abs(*i - y) <= k) {
+699	23 for (long long j = 1, k = i; j <= 150; j++)
+700	20 for (j = 1, k = i; j <= 150; j++) k = r[k];
+701	20 for (j = 1, k = i; j <= 150; j++) k = r[k];
+702	47 nx100[k] = nx[y];
+703	36 cout << nodes[i].next_node << " " << nodes[i].prev_node << endl;
+704	23 for (long long j = 1, k = i; j <= 150; j++)
+705	5 int p[MX], ip[MX], nxt[MX];
+706	12 if (s[i] == 'N') {
+707	11 if (s[i] == 'N') c++;
+708	11 if (s[i]!= 'N') c++;
+709	42 if (a.size() <= k || k == 0) {
+710	37 if (!m) return puts("0"), 0;
+711	12 long long x[N], d[N], e[N];
+712	17 for (int j = 1; j <= m; j++) p[j] = 0;
+713	48 sum += abs(a[j] - h);
+714	16 for (int j = 1; j <= n; j++) {
+715	26 tmp += (s[j + 1][i] - '0') * r;
+716	39 int64_t tog = n;
+717	38 for (int i = 0; i < (1 << m); i++) {
+718	20 if (i & (1 << k))
+719	9 long long p[MAXM];
+720	15 long long t = (((mask) >> (i - 1)) & 1)? 1 : -1;
+721	42 [&](int i, int j) { return coeff[i] > coeff[j]; });
+722	33 for (int j = 1; j <= n; j++) res[ord[j]] = j;
+723	33 if (i & (1ll << j))
+724	17 long long sum = 0, cnt;
+725	19 long long int csum = 0;
+726	23 sum = (sum << 1) + s[i][j] - '0';
+727	62 for (int i = 0; i < n; i++) {
+728	40 for (int mask = 0; mask < (1 << m); ++mask) {
+729	26 if (s[k][j] == '1') c[k].first -= f;
+730	36 long long tmp = 0;
+731	42 for (int i = 1; i <= n; i++) {
+732	45 for (int i = 0; i <= (1 << n); ++i) {
+733	61 if (mp[s ^ f[i]]!= j && i!= j) {
+734	38 if (j!= i && j!= p) printf("%d ", j);
+735	50 unordered_map<long long, int> m;
+736	77 for (int i = 0; i < n; ++i) {
+737	16 if (r_column + dc > column || r_column + dc < 1) {
+738	20 x2 = 2 * (m)-cb - rd;
+739	10 long long tr = 0, tc = 0;
+740	10 if (cb + dc < 1 || cb + dc > m) dc *= -1;
+741	45 if (c1 <= m) {
+742	19 if (rb + mv1 > r || rb + mv1 < 0) {
+743	6 int x = (rb <= rd)? abs(rd - rb) : (abs(rb - n) + abs(m - rd));
+744	27 if (cb > m) {
+745	48 if (b1 + dy < 1 || b1 + dy > m) dy = -dy;
+746	14 if (xr >= xd) {
+747	17 ans = min(ans, 2 * m - (cd + rb));
+748	16 if (b > d) ans = min(ans, (m - b) + (m - d));
+749	30 for (int i = 1; i < n; i++) {
+750	14 sort(a + 1, a + 1 + n, cmp);
+751	8 if (a[i] < MAX) return false;
+752	34 long long L = 0, R = 10;
+753	35 int l = 0, r = 10;
+754	26 if (bx + cx == 0 || bx + cx > n) cx = -cx;
+755	37 (second > 1 && second < m && dc!= 1)) {
+756	43 cout << (ans * inv((1 - P + mod) % mod)) % mod << endl;
+757	20 for (int i = 0; i < (rem); ++i) {
+758	44 if (k <= 0) return 0;
+759	37 dfs2(r[v], rem);
+760	45 a = (a >= b)? a : b;
+761	20 mx = max(a[x - 1] - a[0], b[x - 1] - b[0]);
+762	37 cout << max(ans1, ans2) << "\n";
+763	41 cout << max(max(s1 * h, s2 * h), max(s3 * w, s4 * h));
+764	42 vector<bool> is_prime(maxN + 1, false);
+765	39 area = max(area, (max4 - min4) * w);
+766	45 tt = tt * (cnt[i] - 1);
+767	30 for (long long o = 1; o <= num; o++) cout << 'b';
+768	30 for (long long o = 1; o <= num; o++) cout << 'b';
+769	30 for (long long o = 1; o <= num; o++) cout << 'b';
+770	30 for (long long o = 1; o <= num; o++) cout << 'b';
+771	32 now = (x - st) / (long long)mul;
+772	43 else if ((s.count(arr[n - 1] / 3) && arr[n - 1] % 3 == 1) ||
+773	62 long long flag = 0;
+774	17 long long dif1 = 0;
+775	42 LL r = ceil((double)ar[i] / 3.0);
+776	12 for (long long i = 1; i <= 500000; i++) {
+777	46 if (-1 * v[i - 1] < y) {
+778	27 Min(dp[i + 1][1][1], a, (Node){i, j, k}, last[i + 1][1][1]);
+779	18 if (lim <= dp[i][j]) {
+780	18 if (p[i] >= f[i - 1][0]) {
+781	20 for (int i = n - 1, x = 2 * n - 1; ~i; i--, x = p[x])
+782	31 if (x > +p[i - 1] && uin(nxt[j], pre[1])) par[i][j] = 0;
+783	40 v[1][i] = -v[1][i];
+784	41 if (dp[n - 1][0].first < -1e9)
+785	18 if (w[i][a] > dp[i - 1][b] && dp[i][a] > w[i - 1][b])
+786	18 if (lim <= dp[i][j]) {
+787	38 if (t!= s) cnt[s] = min(cnt[t], cnt[s ^ t]);
+788	17 long long x = 1e9;
+789	38 if (__builtin_popcountll(i) & 1) {
+790	25 val[y | (1 << x.second)] * (1 + x.first) % 998244353;
+791	31 if ((i >> k - 1) & 1) (tmp = ((tmp) < (a[k][j])? (tmp) : (a[k][j])));
+792	39 if (y % 2 == 0)
+793	16 (b == c && a % 2 == 0) && (c == b && b % 2 == 0))
+794	12 (l1 == l3 && l2 % 2 == 0))
+795	82 for (int i = 1; i <= n; i++) {
+796	17 ((c == a) && (b % 2 == 0))) {
+797	5 if (c == b && a % 2 == 0) return true;
+798	23 for (int i = 0; i < y.size(); i++) mp[y[i]] = cnt, cnt++;
+799	31 for (long long i = 0; i <= n; ++i) cout << Ans[i] << " \n"[i == n];
+800	7 bool operator<(const node& rhs) const { return a > rhs.a; }
+801	37 for (int i = n - 1; i >= 0; i--) {
+802	20 if (x <= 0) x = 0;
+803	17 long long l = t;
+804	4 long long T, n, arr[maxn];
+805	17 __int128_t sum = a[i] - mid;
+806	46 d = floor((double)d / (i + 1));
+807	39 if (plz(z[0] - mid1) > 2e15) {
+808	49 for (int64_t cur = lo; cur <= hi + n; cur++) {
+809	49 for (int64_t cur = lo; cur <= hi + 1; cur++) {
+810	37 cout << (sum - k) << "\n";
+811	26 if (s[lo] == '1') cnt--, lo++;
+812	42 if (a.size() <= k || k == 0) {
+813	37 if (!m) return puts("0"), 0;
+814	12 long long x[N], d[N], e[N];
+815	17 for (int j = 1; j <= m; j++) p[j] = 0;
+816	48 sum += abs(a[j] - h);
+817	16 for (int j = 1; j <= n; j++) {
+818	26 tmp += (s[j + 1][i] - '0') * r;
+819	39 int64_t tog = n;
+820	38 for (int i = 0; i < (1 << m); i++) {
+821	20 if (i & (1 << k))
+822	9 long long p[MAXM];
+823	15 long long t = (((mask) >> (i - 1)) & 1)? 1 : -1;
+824	42 [&](int i, int j) { return coeff[i] > coeff[j]; });
+825	33 for (int j = 1; j <= n; j++) res[ord[j]] = j;
+826	33 if (i & (1ll << j))
+827	17 long long sum = 0, cnt;
+828	19 long long int csum = 0;
+829	23 sum = (sum << 1) + s[i][j] - '0';
+830	62 for (int i = 0; i < n; i++) {
+831	40 for (int mask = 0; mask < (1 << m); ++mask) {
+832	26 if (s[k][j] == '1') c[k].first -= f;
+833	36 long long tmp = 0;
+834	42 for (int i = 1; i <= n; i++) {
+835	45 for (int i = 0; i <= (1 << n); ++i) {
+836	61 if (mp[s ^ f[i]]!= j && i!= j) {
+837	38 if (j!= i && j!= p) printf("%d ", j);
+838	50 unordered_map<long long, int> m;
+839	77 for (int i = 0; i < n; ++i) {
+840	16 if (r_column + dc > column || r_column + dc < 1) {
+841	20 x2 = 2 * (m)-cb - rd;
+842	10 long long tr = 0, tc = 0;
+843	10 if (cb + dc < 1 || cb + dc > m) dc *= -1;
+844	45 if (c1 <= m) {
+845	19 if (rb + mv1 > r || rb + mv1 < 0) {
+846	6 int x = (rb <= rd)? abs(rd - rb) : (abs(rb - n) + abs(m - rd));
+847	27 if (cb > m) {
+848	48 if (b1 + dy < 1 || b1 + dy > m) dy = -dy;
+849	14 if (xr >= xd) {
+850	17 ans = min(ans, 2 * m - (cd + rb));
+851	16 if (b > d) ans = min(ans, (m - b) + (m - d));
+852	30 for (int i = 1; i < n; i++) {
+853	14 sort(a + 1, a + 1 + n, cmp);
+854	34 long long L = 0, R = 10;
+855	35 int l = 0, r = 10;
+856	26 if (bx + cx == 0 || bx + cx > n) cx = -cx;
+857	37 (second > 1 && second < m && dc!= 1)) {
+858	43 cout << (ans * inv((1 - P + mod) % mod)) % mod << endl;
+859	20 for (int i = 0; i < (rem); ++i) {
+860	44 if (k <= 0) return 0;

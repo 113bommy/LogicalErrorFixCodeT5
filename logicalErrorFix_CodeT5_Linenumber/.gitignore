@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+
+CodeBERT/
+code_contests/
+data/cppfiles*
+data/descriptions*
+data/samples*
+data/edit_distance/pair_code*
+model/
+run.py.origin
+evaluation_new.ipnyb
