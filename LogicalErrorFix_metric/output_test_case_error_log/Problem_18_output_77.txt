@@ -1,0 +1,1 @@
+Test Case 67 Failed: -1 0 1 1 -1||| -1 0 0 1 -1'Test Case 117 Failed: 0 1 1 1 -1||| 0 1 0 1 -1'Test Case 157 Failed: -1 1 1 1 -1||| -1 1 0 1 -1'Test Case 163 Failed: 1 1 1 1 0||| 1 1 0 1 0'Test Case 165 Failed: 1 1 1 0 0||| 1 1 0 0 0'

@@ -1,0 +1,56 @@
+
+### 변수가 선언되지 않음
+- Problem_63_gold_274
+- Problem_63_gold_350
+- Problem_139_gold_664
+- Problem_19_gold_83
+
+### 세미콜론(;) 누락
+- Problem_72_gold_376
+- Problem_72_gold_375
+- Problem_76_gold_399
+
+### 닫는 중괄호(}) 누락
+- Problem_26_gold_121
+- Problem_9_gold_22
+- Problem_130_gold_626
+- Problem_100_gold_526
+- Problem_156_gold_804
+- Problem_99_gold_509
+- Problem_104_gold_536
+- Problem_94_gold_491
+- Problem_99_gold_518
+
+### 함수 정의가 허용되지 않는 위치
+- Problem_26_gold_119
+- Problem_30_gold_136
+- Problem_79_gold_419
+- Problem_45_gold_245
+- Problem_53_gold_297
+- Problem_113_gold_570
+- Problem_45_gold_168
+- Problem_79_gold_358
+
+### gets 함수가 선언되지 않음
+- Problem_133_gold_636
+- Problem_133_gold_637
+
+### 기본 표현식 누락
+- Problem_156_gold_801
+- Problem_23_gold_109
+- Problem_96_gold_498
+
+### INf가 선언되지 않음
+- Problem_20_gold_92
+
+### 함수 호출에 대한 일치하는 함수 없음
+- Problem_101_gold_527
+
+### 기타 오류
+- Problem_139_gold_672
+- Problem_139_gold_671
+- Problem_21_gold_94
+- Problem_124_gold_610
+- Problem_124_gold_613
+- Problem_124_gold_614
+- Problem_124_gold_615
