@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N = 1e
+const int N = 1e3 + 10;
 int n, m, res[N], idx = -1, step;
 int dx[4] = {0, 1, 0, -1}, dy[4] = {-1, 0, 1, 0};
 bool book[N][N];

@@ -4,7 +4,7 @@ using namespace std;
 long long mod = 1e9 + 7;
 long double eps = 1e-12;
 long double pi = acosl(-1);
-mt1993
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 ifstream in("input.txt");
 ofstream out("output.txt");
 #pragma GCC optimize("Ofast")

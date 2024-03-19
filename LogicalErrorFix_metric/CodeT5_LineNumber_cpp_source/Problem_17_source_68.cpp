@@ -14,7 +14,7 @@ for (; !isdigit(c); c = gc()) b ^= (c == '-');
 for (; isdigit(c); c = gc()) a = a * 10 + c - '0';
 return b ? a : -a;
 }
-};  // namespace fast_read
+}; // namespace fast_read
 using fast_read::RD;
 const long long LINF = 1e18 + 5, INF = 0x3f3f3f3f, hxe = 1319, mod = 998244353;
 inline long long gcd(long long a, long long b) { return b ? gcd(b, a % b) : a; }

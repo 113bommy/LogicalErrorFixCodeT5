@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int MAXN = 2e
+const int MAXN = 2e3 + 5;
 int n;
 char s[MAXN][MAXN];
 int f[MAXN];

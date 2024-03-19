@@ -20,7 +20,7 @@ __x = __c - '0';
 while (isdigit(__c = nc())) __x = __x * 10 + __c - '0';
 __x *= __sgn;
 }
-}  // namespace FastRead
+} // namespace FastRead
 using namespace FastRead;
 using namespace std;
 const int N = 3e5 + 10;

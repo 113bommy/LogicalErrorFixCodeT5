@@ -4,7 +4,7 @@ using ll = long long;
 using ld = long double;
 using pii = pair<int, int>;
 using pll = pair<ll, ll>;
-mt1993
+mt19937 eng(chrono::steady_clock::now().time_since_epoch().count());
 const int N = 3e5 + 4;
 int n, m, cnt[N];
 vector<int> g[N], tree[N];

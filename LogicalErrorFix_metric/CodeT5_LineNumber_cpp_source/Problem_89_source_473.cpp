@@ -7,7 +7,7 @@ while (c < '0' || c > '9') {
 if (c == '-') f = -1;
 c = getchar();
 }
-while (c >= '0' && c <= '9') ans = ans * 
+while (c >= '0' && c <= '9') ans = ans * 10 + c - '0', c = getchar();
 return ans * f;
 }
 const int maxn = 1e6 + 5;

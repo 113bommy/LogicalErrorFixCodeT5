@@ -2,7 +2,7 @@
 using namespace std;
 using ll = long long;
 using vll = vector<ll>;
-const ll S = 2e
+const ll S = 2e5 + 10;
 vector<ll> g[S];
 vector<ll> c;
 ll dfs(ll u, ll p) {

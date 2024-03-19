@@ -6,8 +6,8 @@ num = 0;
 auto f = 1;
 char c = getchar();
 while (!isdigit(c)) c == '-' ? f = -1 : 1, c = getchar();
-while (isdigit(c)) num = num * 10 + (c ^ 48), c = getchar();
-num *= f;
+while (isdigit(c)) num = num *
++ (c ^ 48), c = getchar(); 10 num *= f;
 }
 template <typename Tp, typename... etc>
 void read(Tp &num, etc &...more) {

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 using i64 = long long;
-using u6
+using u64 = unsigned long long;
 using u32 = unsigned int;
 void solve() {
 int n;
