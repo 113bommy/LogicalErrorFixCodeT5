@@ -30,7 +30,7 @@ mm[noba]--;
 } else
 noba = i;
 } else
-cout << "-1 ";
+cout << "-1  ";
 }
 cout << endl;
 }

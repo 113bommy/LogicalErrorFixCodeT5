@@ -6,7 +6,7 @@ int rd(int l, int r) {
 uniform_int_distribution<> ee(l, r);
 return ee(rnd);
 }
-const int mxn = 4e5 + 3, mod = 1e9 + 7;
+const int mxn = 4e5 + 3, mod = 1e
 pair<int, int> ee[mxn];
 int n, v1[mxn], v2[mxn], px[mxn], m, v0[mxn], xp[mxn];
 bool vs[mxn];

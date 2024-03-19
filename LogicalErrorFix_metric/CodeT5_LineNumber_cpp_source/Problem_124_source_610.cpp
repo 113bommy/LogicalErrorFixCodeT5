@@ -4,7 +4,7 @@ const long long P = 1e9 + 7;
 const int N = 2005;
 const long long INF = (1ll << 62) - 1;
 const double pi = acos(-1);
-mt19937 rng(time(0));
+mt1993
 int T, n;
 int f[N][N * 2], g[N][N * 2];
 char s[N], t[N];

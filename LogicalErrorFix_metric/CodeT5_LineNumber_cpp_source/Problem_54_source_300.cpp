@@ -12,7 +12,7 @@ long long x) {
 if (r >= l) {
 long long mid = l + (r - l) / 2;
 long long ans = (r) * (r + 1) / 2;
-cout << ans << " r =" << r << endl;
+cout << ans << "  r =" << r << endl;
 if (ans == x) return {l, r};
 if (ans > x) return binarySearch(l, mid - 1, r, x);
 return binarySearch(l, r + mid, r, x);

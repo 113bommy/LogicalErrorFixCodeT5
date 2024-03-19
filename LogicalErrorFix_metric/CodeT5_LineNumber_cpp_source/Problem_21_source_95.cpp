@@ -48,7 +48,7 @@ print(x);
 putc(c);
 }
 void print_final() { fwrite(wbuf, 1, p3 - wbuf, stdout); }
-} // namespace fastio
+}  // namespace fastio
 template <typename Tv, int limN, int limM>
 struct link_list {
 int hd[limN + 5], nxt[limM + 5], item_n = 0;

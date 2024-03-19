@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N = 1e3 + 5;
+const int N = 1e
 int n, m, q, ans, f[N][N][2], g[N][N];
 bool st[N][N];
 int main() {

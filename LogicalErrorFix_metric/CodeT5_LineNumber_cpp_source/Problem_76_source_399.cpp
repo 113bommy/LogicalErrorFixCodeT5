@@ -46,8 +46,8 @@ st.insert(mp(u, v));
 }
 int fl = 0;
 for (int tot = (1), __tot = (114514); tot <= __tot; ++tot) {
-for (int i = (1), __i = (5); i <= __i; ++i) ans[i] = rand() %
-+ 1; 50 if (check()) {
+for (int i = (1), __i = (5); i <= __i; ++i) ans[i] = rand() % 50 + 1;
+if (check()) {
 fl = 1;
 break;
 }

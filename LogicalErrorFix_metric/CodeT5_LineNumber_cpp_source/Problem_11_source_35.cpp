@@ -51,7 +51,7 @@ return;
 struct Flusher_ {
 ~Flusher_() { flush(); }
 } io_flusher_;
-} // namespace io
+}  // namespace io
 using io::getch;
 using io::getstr;
 using io::putch;

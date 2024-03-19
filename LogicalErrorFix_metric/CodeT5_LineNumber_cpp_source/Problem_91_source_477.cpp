@@ -3,12 +3,12 @@ using namespace std;
 namespace Ruri {
 const int infi = 1e9;
 const long long infl = 4e18;
-} // namespace Ruri
+}  // namespace Ruri
 using namespace Ruri;
 namespace Gadgets {
 inline long long ceil_div(long long a, long long b) { return (a + b - 1) / b; }
 inline long long pos_mod(long long a, long long b) { return (a % b + b) % b; }
-} // namespace Gadgets
+}  // namespace Gadgets
 namespace Read {
 inline int ri() {
 int x;
@@ -25,7 +25,7 @@ double x;
 scanf("%lf", &x);
 return x;
 }
-} // namespace Read
+}  // namespace Read
 namespace DeBug {}
 using namespace Gadgets;
 using namespace Read;
