@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int maxn = 5e3 + 5, mum = 1e9 + 7;
+const int maxn = 5e
 int Pow(int A, long long B) {
 int num = 1;
 while (B) {

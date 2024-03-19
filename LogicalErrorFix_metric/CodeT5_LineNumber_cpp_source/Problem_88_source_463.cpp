@@ -2,7 +2,7 @@
 using namespace std;
 const unsigned int M = 1000000007;
 const unsigned int MOD = 998244353;
-const int MAXN = 1e5 + 55;
+const int MAXN = 1e
 const long long int MAXD = 1e14;
 const long long int INF = 1e18;
 const long long int NINF = INF * (-1);

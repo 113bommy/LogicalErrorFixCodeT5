@@ -6,7 +6,7 @@ for (auto& i : v) is >> i;
 return is;
 }
 const long long INF = 1e18;
-const long long MOD = 1e9 + 7;
+const long long MOD = 1e
 const int inf = 1e9;
 const int N = 2e5 + 10;
 bool flag;

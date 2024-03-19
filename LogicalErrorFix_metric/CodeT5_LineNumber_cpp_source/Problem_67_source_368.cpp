@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int mxN = 1e3 + 5;
+const int mxN = 1e
 const double EPS = 1e-9;
 vector<vector<long long>> C(mxN, vector<long long>(4, -1));
 long long ini(int n, int k) {

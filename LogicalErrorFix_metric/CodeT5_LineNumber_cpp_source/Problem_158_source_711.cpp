@@ -3,7 +3,7 @@
 #pragma GCC target("popcnt")
 using namespace std;
 mt19937 bruh(chrono::steady_clock::now().time_since_epoch().count());
-const long long N = 1e6 + 100;
+const long long N = 1e
 const long long mod = 998244353;
 const long long big = 1e17;
 long long t, n, m;

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int MAXN = 10 + 5;
-const int MAXM = 1e4 + 5;
+const int MAXM = 1e
 const long long linf = 0x3f3f3f3f3f3f3f3f;
 int n, m;
 int a[MAXN];

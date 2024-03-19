@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 15;
-const int M = 1e4 + 5;
+const int M = 1e
 int t, n, m, a[N], sum, f, ans[N], res;
 char s[N][M];
 pair<int, int> c[M];

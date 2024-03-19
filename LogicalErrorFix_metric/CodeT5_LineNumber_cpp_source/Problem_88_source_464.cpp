@@ -28,7 +28,7 @@ const int ten9 = 1e9;
 const int mod = 1e9 + 7;
 struct pair_hash {
 inline std::size_t operator()(const std::pair<int, int>& v) const {
-return v.first * 31 + v.second;
+return v.first * 
 }
 };
 long long bin_to_integer(string strin) {

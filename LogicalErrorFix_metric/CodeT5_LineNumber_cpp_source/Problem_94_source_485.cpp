@@ -2,7 +2,7 @@
 using namespace std;
 long long a[15], n, k, t;
 vector<long long> ans;
-long long ten[] = {1, 10, 100, 1000, 10000, 100000,
+long long ten[] = {1,       10,       100,       1000,       10000,      100000,
 1000000, 10000000, 100000000, 1000000000, 10000000000};
 signed main() {
 cin >> t;

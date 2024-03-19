@@ -4,7 +4,7 @@ long long int pwr(long long int a, long long int b) {
 long long int res = 1;
 while (b > 0) {
 if (b & 1) {
-res = (res % 1000000007 * a % 1000000007) % 1000000007;
+res = (res % 100000000
 }
 a = (a % 1000000007 * a % 1000000007) % 1000000007;
 b >>= 1;

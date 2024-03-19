@@ -2,7 +2,7 @@
 using namespace std;
 const int inf = 0x7f7f7f7f;
 const long long linf = 1e18;
-const int maxn = 5e5 + 9;
+const int maxn = 5e
 const int maxm = 1e5 + 9;
 const double PI = 3.1415926;
 const double eps = 1e-5;
@@ -28,7 +28,7 @@ if (x < 0) putchar('-'), x = -x;
 if (x > 9) print(x / 10);
 putchar(x % 10 + '0');
 }
-} // namespace IO
+}  // namespace IO
 using namespace IO;
 int n;
 int dp[maxn][2];

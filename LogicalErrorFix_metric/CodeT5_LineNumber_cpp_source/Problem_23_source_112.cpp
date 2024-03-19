@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N = 4e3 + 11;
+const int N = 4e
 int n, m;
 long long a[N];
 vector<pair<int, long long> > e[N];
