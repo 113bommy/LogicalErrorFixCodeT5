@@ -21,6 +21,7 @@ using a masked language modeling (MLM) loss.
 
 from __future__ import absolute_import
 import os
+import re
 import sys
 import bleu
 import pickle
@@ -62,24 +63,49 @@ class Example(object):
         self.target = target
 
 import pandas as pd
-COLUMNS = ['Correct_code', 'Incorrect_code', 'Statement']
+COLUMNS = ['PID', 'Correct_code', 'Incorrect_code', 'Statement']
 
-def read_examples(filename):
-  """Read examples from filename for DeepFix style training Line stmt Line stmt Line stmt ..."""
-  examples = []
-  data = pd.read_csv(filename, sep='\t', header=[0]).drop(columns=COLUMNS[0])
-  for idx, elem in data.iterrows():
-    code = ' '.join(elem[COLUMNS[1]].split('||| '))[:-1].strip()
-    stmt = elem[COLUMNS[2]].strip()
 
-    examples.append(
-      Example(
-              idx = idx,
-              source = code,
-              target = stmt,
-              )
-    )
-  return examples 
+def read_examples(code_raw, args):
+  if args.model_name_or_path == "microsoft/codebert-base":
+    examples = []
+    data = pd.read_csv(code_raw, sep='\t', header=[0]).drop(columns=COLUMNS[0])
+    for idx, elem in data.iterrows():
+        code = ' '.join(elem[COLUMNS[2]].split('||| '))[:-1].strip()
+        stmt = elem[COLUMNS[3]].strip()
+
+        examples.append(
+            Example(
+                    idx = idx,
+                    source = code,
+                    target = stmt,
+                    )
+        )
+    return examples 
+  
+  elif args.model_name_or_path == "Salesforce/codet5-base":
+    data = pd.read_csv(code_raw, sep='\t', header=[0])
+    correct_code_dictionary = {}
+    for idx, elem in data.iterrows():
+        correct_code = elem[COLUMNS[1]].split('||| ')[:-1]
+        correct_code_dictionary[f'Problem_{elem[COLUMNS[0]]}_CorrectCode_{idx}'] = {}
+        for single_code in correct_code:
+            correct_code_dictionary[f'Problem_{elem[COLUMNS[0]]}_CorrectCode_{idx}'][single_code.split(" ")[0]] = re.sub(r'^\d+', '', single_code)
+
+    source_dictionary = {}
+    data = pd.read_csv(code_raw, sep='\t', header=[0])
+    for idx, elem in data.iterrows():
+        source_code = elem[COLUMNS[2]].split('||| ')[:-1]
+        source_dictionary[f'Problem_{elem[COLUMNS[0]]}_source_{idx}'] = {}
+        for single_code in source_code:
+            source_dictionary[f'Problem_{elem[COLUMNS[0]]}_source_{idx}'][single_code.split(" ")[0]] = re.sub(r'^\d+', '', single_code)
+
+    data_dictionary = {}
+    data_dictionary['gold'] = correct_code_dictionary
+    data_dictionary['source'] = source_dictionary
+
+    return data_dictionary
+
 
 class InputFeatures(object):
     """A single training/test features for a example."""
@@ -98,69 +124,30 @@ class InputFeatures(object):
         self.target_mask = target_mask       
 
 
-def process_code_examples(input_examples):
-    def parse_and_continue_on_mismatch(code_str):
-        code_dict = {}
-        expected_line_number = 1
-        parts = code_str.split()
-        current_line = None
-        for part in parts:
-            if part.isdigit():
-                line_number = int(part)
-                if line_number == expected_line_number:
-                    current_line = line_number
-                    code_dict[current_line] = ""
-                    expected_line_number += 1
-                else:
-                    code_dict[current_line] += part + " "
-            else:
-                if current_line is not None:
-                    code_dict[current_line] += part + " "
-        for line in code_dict:
-            code_dict[line] = code_dict[line].strip()
-        return code_dict
-
-    def remove_line_numbers(source_dict):
-        ret = []
-        for _, v in source_dict.items():
-            ret.append(v)
-        return ' '.join(ret)
-
-    def parse_single_line_to_dict(line_str):
-        parts = line_str.split(' ', 1)
-        line_number = parts[0]
-        code = parts[1] if len(parts) > 1 else ""
-        return {int(line_number): code}
-
-    def update_values_from_dict(dict1, dict2):
-        for key in dict1:
-            if key in dict2:
-                dict1[key] = dict2[key]
-        return dict1
-
-    source_code_dict = {}
-    for i, example in enumerate(input_examples):
-        source_code_dict[i] = parse_and_continue_on_mismatch(example.source)
-
-    target_dict = {}
-    for i, example in enumerate(input_examples):
-        target_dict[i] = parse_single_line_to_dict(example.target)
-
-    target_code_dict = {i: update_values_from_dict(copy.deepcopy(source_code_dict[i]), target_dict[i]) for i in range(len(target_dict))}
-
+def process_code_examples(data_dictionary):
     input_code = {}
-    for i in range(len(source_code_dict)):
-        input_code[i] = {
-            "source": remove_line_numbers(source_code_dict[i]),
-            "target": remove_line_numbers(target_code_dict[i])
-        }
+    gold_dictionary = data_dictionary['gold']
+    source_dictionary = data_dictionary['source']
+
+    for index in range(len(source_dictionary)):
+        input_code[index] = {}
+
+    for index, (cpp_file, mul_code) in enumerate(source_dictionary.items()):
+        line_removed = []
+        for _, single_code in mul_code.items():
+            line_removed.append(single_code)
+        input_code[index]['source'] = ''.join(line_removed)
+ 
+    for index, (cpp_file, mul_code) in enumerate(gold_dictionary.items()):
+        line_removed = []
+        for _, single_code in mul_code.items():
+            line_removed.append(single_code)
+        input_code[index]['target'] = ''.join(line_removed)   
 
     return input_code
 
-
-
 def convert_examples_to_features(examples, tokenizer, args,stage=None):
-    if args.model_name_or_path != "Salesforce/codet5-base":
+    if args.model_name_or_path == "microsoft/codebert-base":
         features = []
         for example_index, example in enumerate(examples):
             #source
@@ -207,7 +194,7 @@ def convert_examples_to_features(examples, tokenizer, args,stage=None):
                     target_mask,
                 )
             )
-    else:
+    elif args.model_name_or_path == "Salesforce/codet5-base":
         max_length = 512
         input_code = process_code_examples(examples)
         features = []
@@ -347,14 +334,14 @@ def main():
     tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name if args.tokenizer_name else args.model_name_or_path,do_lower_case=args.do_lower_case)
     
     # build model
-    if args.model_name_or_path != "Salesforce/codet5-base":
+    if args.model_name_or_path == "microsoft/codebert-base":
         encoder = model_class.from_pretrained(args.model_name_or_path,config=config)    
         decoder_layer = nn.TransformerDecoderLayer(d_model=config.hidden_size, nhead=config.num_attention_heads)
         decoder = nn.TransformerDecoder(decoder_layer, num_layers=6)
         model=Seq2Seq(encoder=encoder,decoder=decoder,config=config,
                     beam_size=args.beam_size,max_length=args.max_target_length,
                     sos_id=tokenizer.cls_token_id,eos_id=tokenizer.sep_token_id)
-    else:
+    elif args.model_name_or_path == "Salesforce/codet5-base":
         model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-base")
         # CodeT5 special token addition
         special_tokens_dict = {"additional_special_tokens": ['[unchange]', '[insert]', '[delete]']}
@@ -419,9 +406,10 @@ def main():
             return collated_batch
         return functools.partial(collate_fn, pad_id=self.tokenizer.pad_token_id)
 
+    dev_count = 1
     if args.do_train:
         # Prepare training data loader
-        train_examples = read_examples(args.train_filename)
+        train_examples = read_examples(args.train_filename, args)
         train_features = convert_examples_to_features(train_examples, tokenizer,args,stage='train')
         all_source_ids = torch.tensor([f.source_ids for f in train_features], dtype=torch.long)
         all_source_mask = torch.tensor([f.source_mask for f in train_features], dtype=torch.long)
@@ -466,9 +454,9 @@ def main():
             batch = next(train_dataloader)
             batch = tuple(t.to(device) for t in batch)
             source_ids,source_mask,target_ids,target_mask = batch
-            if args.model_name_or_path != "Salesforce/codet5-base":
+            if args.model_name_or_path == "microsoft/codebert-base":
                 loss,_,_ = model(source_ids=source_ids,source_mask=source_mask,target_ids=target_ids,target_mask=target_mask)
-            else:
+            elif args.model_name_or_path == "Salesforce/codet5-base":
                 outputs = model(input_ids=source_ids.cuda(), attention_mask=source_mask.cuda(), labels=target_ids.cuda())
                 loss = outputs.loss
             
@@ -477,9 +465,9 @@ def main():
             if args.gradient_accumulation_steps > 1:
                 loss = loss / args.gradient_accumulation_steps
             
-            if args.model_name_or_path != "Salesforce/codet5-base":
+            if args.model_name_or_path == "microsoft/codebert-base":
                 tr_loss += loss.item()
-            else:
+            elif args.model_name_or_path == "Salesforce/codet5-base":
                 tr_loss += loss.item()
             train_loss=round(tr_loss*args.gradient_accumulation_steps/(nb_tr_steps+1),4)
             bar.set_description("loss {}".format(train_loss))
@@ -503,7 +491,7 @@ def main():
                 if 'dev_loss' in dev_dataset:
                     eval_examples,eval_data=dev_dataset['dev_loss']
                 else:
-                    eval_examples = read_examples(args.dev_filename)
+                    eval_examples = read_examples(args.dev_filename, args)
                     eval_features = convert_examples_to_features(eval_examples, tokenizer, args,stage='dev')
                     all_source_ids = torch.tensor([f.source_ids for f in eval_features], dtype=torch.long)
                     all_source_mask = torch.tensor([f.source_mask for f in eval_features], dtype=torch.long)
@@ -526,17 +514,17 @@ def main():
                     source_ids,source_mask,target_ids,target_mask = batch                  
 
                     with torch.no_grad():
-                        if args.model_name_or_path != "Salesforce/codet5-base":
+                        if args.model_name_or_path == "microsoft/codebert-base":
                             _,loss,num = model(source_ids=source_ids,source_mask=source_mask,
                                             target_ids=target_ids,target_mask=target_mask)
-                        else:
+                        elif args.model_name_or_path == "Salesforce/codet5-base":
                             outputs = model(input_ids=source_ids.cuda(), attention_mask=source_mask.cuda(), labels=target_ids.cuda())
                             loss = outputs.loss
 
                     eval_loss += loss.sum().item()
-                    if args.model_name_or_path != "Salesforce/codet5-base":
+                    if args.model_name_or_path == "microsoft/codebert-base":
                         tokens_num += num.sum().item()
-                    else:
+                    elif args.model_name_or_path == "Salesforce/codet5-base":
                         num_tokens = torch.sum(source_mask, dim=1)
                         tokens_num += num_tokens.sum().item()
 
@@ -574,8 +562,20 @@ def main():
                 if 'dev_bleu' in dev_dataset:
                     eval_examples,eval_data=dev_dataset['dev_bleu']
                 else:
-                    eval_examples = read_examples(args.dev_filename)
-                    eval_examples = random.sample(eval_examples,min(100,len(eval_examples)))
+                    eval_examples = read_examples(args.dev_filename, args)
+                    if isinstance(eval_examples, dict):
+                        gold_dict = eval_examples['gold']
+                        source_dict = eval_examples['source']
+
+                        keys = list(gold_dict.keys())
+                        random_keys = random.sample(keys, min(50, len(keys)))
+                        source_key = [f'Problem_{key.split("_")[1]}_source_{key.split("_")[3]}' for key in random_keys]
+
+                        selected_gold = {key: gold_dict[key] for key in random_keys}
+                        selected_source = {key: source_dict[key] for key in source_key}
+                        eval_examples = {'gold': selected_gold, 'source': selected_source}
+                    else:
+                        eval_examples = random.sample(eval_examples,min(100,len(eval_examples)))
                     eval_features = convert_examples_to_features(eval_examples, tokenizer, args,stage='test')
                     all_source_ids = torch.tensor([f.source_ids for f in eval_features], dtype=torch.long)
                     all_source_mask = torch.tensor([f.source_mask for f in eval_features], dtype=torch.long)    
@@ -588,11 +588,11 @@ def main():
 
                 model.eval() 
                 p=[]
-                for batch in eval_dataloader:
+                for batch in tqdm(eval_dataloader):
                     batch = tuple(t.to(device) for t in batch)
                     source_ids,source_mask= batch                  
                     with torch.no_grad():
-                        if args.model_name_or_path != "Salesforce/codet5-base":
+                        if args.model_name_or_path == "microsoft/codebert-base":
                             preds = model(source_ids=source_ids,source_mask=source_mask)  
                             for pred in preds:
                                 t=pred[0].cpu().numpy()
@@ -601,14 +601,14 @@ def main():
                                     t=t[:t.index(0)]
                                 text = tokenizer.decode(t,clean_up_tokenization_spaces=False)
                                 p.append(text)
-                        else:
-                            model_ptr = model if args.local_rank == -1 else model.module
+                        elif args.model_name_or_path == "Salesforce/codet5-base":
+                            model_ptr = model
                             output_seq = model_ptr.generate(
                                 input_ids=source_ids.cuda(),
                                 pad_token_id=tokenizer.pad_token_id,
-                                max_length=512,
+                                max_length=1024,
                                 num_beams=args.beam_size,
-                                early_stopping=True
+                                early_stopping=False
                             )
                             for pred in output_seq:
                                 text = tokenizer.decode(pred, skip_special_tokens=True)
@@ -618,13 +618,13 @@ def main():
 
                 model.train()
                 predictions=[]
-                if args.model_name_or_path != "Salesforce/codet5-base":
+                if args.model_name_or_path == "microsoft/codebert-base":
                     with open(os.path.join(args.output_dir,"dev.output"),'w') as f, open(os.path.join(args.output_dir,"dev.gold"),'w') as f1:
                         for ref,gold in zip(p,eval_examples):
                             predictions.append(str(gold.idx)+'\t'+ref)
                             f.write(str(gold.idx)+'\t'+ref+'\n')
                             f1.write(str(gold.idx)+'\t'+gold.target+'\n')
-                else:
+                elif args.model_name_or_path == "Salesforce/codet5-base":
                     with open(os.path.join(args.output_dir,"dev-CodeT5.output"),'w') as f, open(os.path.join(args.output_dir,"dev-CodeT5.gold"),'w') as f1:
                         eval_code = process_code_examples(eval_examples)     
                         for (ref, example_index, gold) in zip(p, eval_code.keys(), eval_code.values()):
@@ -634,7 +634,7 @@ def main():
 
                 print("Prediction Complete")
 
-                if args.model_name_or_path != "Salesforce/codet5-base":
+                if args.model_name_or_path == "microsoft/codebert-base":
                     (goldMap, predictionMap) = bleu.computeMaps(predictions, os.path.join(args.output_dir, "dev.gold")) 
                     dev_bleu=round(bleu.bleuFromMaps(goldMap, predictionMap)[0],2)
                     logger.info("  %s = %s "%("bleu-4",str(dev_bleu)))
@@ -650,7 +650,7 @@ def main():
                         model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
                         output_model_file = os.path.join(output_dir, "pytorch_model.bin")
                         torch.save(model_to_save.state_dict(), output_model_file)
-                else: 
+                elif args.model_name_or_path == "Salesforce/codet5-base":
                     (goldMap, predictionMap) = bleu.computeMaps(predictions, os.path.join(args.output_dir, "dev-CodeT5.gold")) 
                     dev_bleu=round(bleu.bleuFromMaps(goldMap, predictionMap)[0],2)
                     logger.info("  %s = %s "%("bleu-4",str(dev_bleu)))
@@ -676,7 +676,7 @@ def main():
             files.append(args.test_filename)
         for idx,file in enumerate(files):   
             logger.info("Test file: {}".format(file))
-            eval_examples = read_examples(file)
+            eval_examples = read_examples(file, args)
             eval_features = convert_examples_to_features(eval_examples, tokenizer, args,stage='test')
             all_source_ids = torch.tensor([f.source_ids for f in eval_features], dtype=torch.long)
             all_source_mask = torch.tensor([f.source_mask for f in eval_features], dtype=torch.long)    
@@ -692,7 +692,7 @@ def main():
                 batch = tuple(t.to(device) for t in batch)
                 source_ids,source_mask= batch                  
                 with torch.no_grad():
-                    if args.model_name_or_path != "Salesforce/codet5-base":
+                    if args.model_name_or_path == "microsoft/codebert-base":
                         preds = model(source_ids=source_ids,source_mask=source_mask)  
                         for pred in preds:
                             t=pred[0].cpu().numpy()
@@ -701,14 +701,14 @@ def main():
                                 t=t[:t.index(0)]
                             text = tokenizer.decode(t,clean_up_tokenization_spaces=False)
                             p.append(text)
-                    else:
+                    elif args.model_name_or_path == "Salesforce/codet5-base":
                         model_ptr = model if args.local_rank == -1 else model.module
                         output_seq = model_ptr.generate(
                             input_ids=source_ids.cuda(),
                             pad_token_id=tokenizer.pad_token_id,
                             max_length=512,
                             num_beams=args.beam_size,
-                            early_stopping=True
+                            early_stopping=False
                         )
                         for pred in output_seq:
                             text = tokenizer.decode(pred, skip_special_tokens=True)
@@ -719,13 +719,13 @@ def main():
             predictions=[]
             modelName = args.load_model_path.split('/')[-2]
             fileName = args.test_filename.split('_')[-1].split('.')[0]
-            if args.model_name_or_path != "Salesforce/codet5-base":
+            if args.model_name_or_path == "microsoft/codebert-base":
                 with open(os.path.join(args.output_dir + '/' + modelName, fileName + "_{}.output".format(str(idx))),'w') as f, open(os.path.join(args.output_dir + '/' + modelName, fileName + "_{}.gold".format(str(idx))),'w') as f1:
                     for ref,gold in zip(p,eval_examples):
                         predictions.append(str(gold.idx)+'\t'+ref)
                         f.write(str(gold.idx)+'\t'+ref+'\n')
                         f1.write(str(gold.idx)+'\t'+gold.target+'\n')
-            else:
+            elif args.model_name_or_path == "Salesforce/codet5-base":
                 with open(os.path.join(args.output_dir + '/' + modelName, fileName + "_{}.output".format(str(idx))),'w') as f, open(os.path.join(args.output_dir + '/' + modelName, fileName + "_{}.gold".format(str(idx))),'w') as f1:
                     eval_code = process_code_examples(eval_examples)
                     for (ref, example_index, gold) in zip(p, eval_code.keys(), eval_code.values()):
